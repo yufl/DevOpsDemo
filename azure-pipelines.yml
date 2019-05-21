@@ -28,6 +28,6 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    print(os.getcwd())
+    python **\src\com\kuka\App.py
   displayName: 'python run'
 
