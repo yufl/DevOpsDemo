@@ -28,7 +28,11 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
+    import os
     print(os.getcwd())
-    python src/com/kuka/App.py
+    path = os.listdir(os.getcwd())
+    for p in path:
+      print(p)
+    #python src/com/kuka/App.py
   displayName: 'python run'
 
