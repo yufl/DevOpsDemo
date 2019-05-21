@@ -29,6 +29,6 @@ steps:
 
 - script: |
     print(os.getcwd())
-    python DevOpsDemo/src/com/kuka/App.py
+    python DevOpsDemo\\src\\com\\kuka\\App.py
   displayName: 'python run'
 
