@@ -37,7 +37,10 @@ steps:
 
 - script: |
     dir $(Build.SourcesDirectory)
+    echo 'Build...'
     pyinstaller -c $(Build.SourcesDirectory)\src\com\kuka\App.py
+    echo 'Copy azure-devops package'
     .\\azure-devops.bat
+    echo 'Run...'
     .\\dist\\App\\App.exe
   displayName: dos commands
