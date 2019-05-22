@@ -43,6 +43,7 @@ steps:
 - script: |
     pip show azure-devops > c:\\azure-devops.txt
     for /f "tokens=2* delims= " %a in ('call findstr "Location" c:\a.txt') do (set azure-devops=%a\azure)
+    del c:\\azure-devops.txt
     echo %azure-devops%
     mkdir c:\\debug
     xcopy /E %azure-devops% c:\\debug\\azure
