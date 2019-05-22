@@ -41,6 +41,10 @@ steps:
     script: 'echo Write your commands here.' 
 
 - script: |
-    pip show azure-devops
-    where python
-  displayName: Set a variable and then display all
+    pip show azure-devops > c:\\azure-devops.txt
+    for /f "tokens=2* delims= " %a in ('call findstr "Location" c:\a.txt') do (set azure-devops=%a\azure)
+    echo %azure-devops%
+    mkdir c:\\debug
+    xcopy /E %azure-devops% c:\\debug\\azure
+    tree c:\\debug\\azure
+  displayName: dos commands
