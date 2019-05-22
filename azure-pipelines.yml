@@ -31,5 +31,6 @@ steps:
 - script: |
     dir $(Build.SourcesDirectory)
     python $(Build.SourcesDirectory)\src\com\kuka\App.py
+    dir c:\
   displayName: 'python run'
 
