@@ -34,3 +34,15 @@ steps:
     dir c:\
   displayName: 'python run'
 
+# Command Line
+# Run a command line script using cmd.exe on Windows and bash on macOS and Linux.
+- task: CmdLine@2
+  inputs:
+    #script: 'echo Write your commands here.' 
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
+
+- script: |
+    pip show azure-devops
+    where python
+  displayName: Set a variable and then display all
