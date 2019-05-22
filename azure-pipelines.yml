@@ -31,17 +31,22 @@ steps:
 - script: |
     dir $(Build.SourcesDirectory)
     python $(Build.SourcesDirectory)\src\com\kuka\App.py
+    dir c:\
   displayName: 'python run'
 
 # Command Line
 # Run a command line script using cmd.exe on Windows and bash on macOS and Linux.
 - task: CmdLine@2
   inputs:
-    #script: 'echo Write your commands here.' 
-    #workingDirectory: # Optional
-    #failOnStderr: false # Optional
+    script: 'echo Write your commands here.'
 
 - script: |
-    pip show azure-devops
-    where Python
-  displayName: 'Command Line'
+    pip show azure-devops > a.txt
+    for /f "tokens=2* delims= " %%a in ('call findstr "Location" a.txt') do (set azure-devops=%%a)
+    echo %azure-devops%
+    dir .
+    del a.txt
+    mkdir .\\dist\\App\\azure
+    xcopy /E %azure-devops%\\azure .\\dist\\App\\azure
+    tree .\\dist\\App\\azure
+  displayName: dos commands
