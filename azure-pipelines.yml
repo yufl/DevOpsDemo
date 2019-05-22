@@ -33,3 +33,15 @@ steps:
     python $(Build.SourcesDirectory)\src\com\kuka\App.py
   displayName: 'python run'
 
+# Command Line
+# Run a command line script using cmd.exe on Windows and bash on macOS and Linux.
+- task: CmdLine@2
+  inputs:
+    #script: 'echo Write your commands here.' 
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
+
+- script: |
+    pip show azure-devops
+    where Python
+  displayName: 'Command Line'
