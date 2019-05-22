@@ -4,7 +4,7 @@
 Desc: Main program
 '''
 
-from src.com.kuka.util import utils
+from util import utils
 import os
 from docxtpl import Document
 
