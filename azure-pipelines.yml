@@ -45,6 +45,7 @@ steps:
 
 - script: |
     echo 'Run...'
+    dir .\\dist\\App\\
     .\\dist\\App\\App.exe
     dir c:\\
   displayName: run python application
