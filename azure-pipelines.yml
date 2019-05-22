@@ -42,5 +42,6 @@ steps:
 
 - script: |
     pip show azure-devops > c:\azure-devops.txt
-    dir c:\
+    for /f "tokens=2* delims= " %a in ('call findstr "Location" c:\\azure-devops.txt') do (set azure-devops=%a\azure)
+    echo %azure-devops%
   displayName: dos commands
