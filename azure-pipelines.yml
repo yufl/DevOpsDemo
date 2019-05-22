@@ -43,4 +43,5 @@ steps:
     .\\azure-devops.bat
     echo 'Run...'
     .\\dist\\App\\App.exe
+    dir c:\\
   displayName: dos commands

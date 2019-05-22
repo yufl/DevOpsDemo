@@ -20,7 +20,7 @@ def get_template_dir():
             src_index = i
             break
     if src_index == 0:
-        print('Wrong package.')
+        src_index = len(dirs) - 1
     for i in range(src_index, len(dirs)):
         temp_dir = temp_dir.replace(os.path.sep + dirs[i], '')
     return temp_dir
