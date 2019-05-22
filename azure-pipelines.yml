@@ -29,6 +29,7 @@ steps:
   displayName: 'Install dependencies'
 
 - script: |
-    python $(Build.SourcesDirectory)\\src\\com\\kuka\\App.py
+    dir $(Build.SourcesDirectory)
+    python $(Build.SourcesDirectory)\src\com\kuka\App.py
   displayName: 'python run'
 
