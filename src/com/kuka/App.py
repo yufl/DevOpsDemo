@@ -14,4 +14,4 @@ if __name__ == "__main__":
     object_path = os.path.join(template_dir, "c:\\debugDemo.docx")
     doc = Document(template_path)
     doc.save(object_path)
-    utils.update_doc_toc(object_path)
+    #utils.update_doc_toc(object_path)
